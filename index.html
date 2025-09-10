@@ -17,11 +17,9 @@
             background: linear-gradient(135deg, #8a2be2, #ff3399);
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             padding: 20px;
-            color: white;
         }
         
         .container {
@@ -33,8 +31,6 @@
             max-width: 500px;
             text-align: center;
             animation: fadeIn 1s ease;
-            color: #333;
-            margin-bottom: 30px;
         }
         
         h1 {
@@ -72,7 +68,6 @@
             cursor: pointer;
             transition: all 0.3s;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            margin: 10px 5px;
         }
         
         button:hover {
@@ -134,53 +129,6 @@
             animation-delay: 2s;
         }
         
-        .share-section {
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 15px;
-            padding: 20px;
-            margin-top: 20px;
-            text-align: center;
-            width: 90%;
-            max-width: 500px;
-        }
-        
-        .share-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: white;
-            color: #8a2be2;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 50px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            margin: 10px;
-            text-decoration: none;
-        }
-        
-        .share-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        .share-button i {
-            margin-right: 8px;
-        }
-        
-        .url-box {
-            background: white;
-            color: #333;
-            padding: 15px;
-            border-radius: 10px;
-            margin: 15px 0;
-            word-break: break-all;
-            font-size: 14px;
-            text-align: center;
-        }
-        
         @keyframes float {
             0%, 100% {
                 transform: translateY(0) rotate(0deg);
@@ -205,21 +153,6 @@
             margin-top: 30px;
             font-weight: bold;
             color: #8a2be2;
-        }
-        
-        @media (max-width: 600px) {
-            .container {
-                padding: 25px;
-            }
-            
-            button {
-                padding: 12px 25px;
-                font-size: 16px;
-            }
-            
-            h1 {
-                font-size: 24px;
-            }
         }
     </style>
 </head>
@@ -246,33 +179,6 @@
         <p class="note">Note: A new tab will open with your personalized birthday message!</p>
         
         <p class="signature">From Pritom</p>
-    </div>
-
-    <div class="share-section">
-        <h2>Share this Birthday Wish Page</h2>
-        <p>Send this link to friends so they can wish you happy birthday too!</p>
-        
-        <div class="url-box">
-            https://pritom.com/happy-birthday
-        </div>
-        
-        <p>Click a button below to share:</p>
-        
-        <a href="#" class="share-button">
-            <i class="fab fa-whatsapp"></i> WhatsApp
-        </a>
-        
-        <a href="#" class="share-button">
-            <i class="fas fa-sms"></i> SMS
-        </a>
-        
-        <a href="#" class="share-button">
-            <i class="fab fa-facebook-messenger"></i> Messenger
-        </a>
-        
-        <a href="#" class="share-button">
-            <i class="fas fa-link"></i> Copy Link
-        </a>
     </div>
 
     <script>
@@ -425,14 +331,6 @@
             if (e.key === 'Enter') {
                 openBirthdayWish();
             }
-        });
-        
-        // Simulate share functionality
-        document.querySelectorAll('.share-button').forEach(button => {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                alert('Sharing functionality would open on a real website. For now, you can copy the link manually: https://pritom.com/happy-birthday');
-            });
         });
     </script>
 </body>
