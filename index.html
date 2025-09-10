@@ -285,6 +285,34 @@
                                 transform: translateY(-15px);
                             }
                         }
+                            .balloon-fall {
+        position: absolute;
+        width: 40px;
+        height: 55px;
+        background: pink;
+        border-radius: 50%;
+        animation: drop linear forwards;
+    }
+
+    .balloon-fall::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 15px;
+        background: black;
+    }
+
+    @keyframes drop {
+        0% {
+            transform: translateY(-100vh) scale(0.8) rotate(0deg);
+        }
+        100% {
+            transform: translateY(100vh) scale(1) rotate(360deg);
+        }
+    }
                     </style>
                 </head>
                 <body>
@@ -321,6 +349,20 @@ From PRITAM 😊</p>
                                 }, 5000);
                             }, i * 30);
                         }
+                        const balloonColors = ['#ff3399', '#8a2be2', '#3399ff', '#ffcc00', '#33cc33'];
+    for (let i = 0; i < 30; i++) {
+        setTimeout(() => {
+            const balloon = document.createElement('div');
+            balloon.className = 'balloon-fall';
+            balloon.style.left = Math.random() * 100 + 'vw';
+            balloon.style.background = balloonColors[Math.floor(Math.random() * balloonColors.length)];
+            balloon.style.animationDuration = (Math.random() * 4 + 4) + 's';
+            document.body.appendChild(balloon);
+
+            // remove after falling
+            setTimeout(() => balloon.remove(), 6000);
+        }, i * 300);
+    }
                     <\/script>
                 </body>
                 </html>
@@ -338,4 +380,5 @@ From PRITAM 😊</p>
     </script>
 </body>
 </html>
+
 
