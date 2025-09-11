@@ -201,30 +201,28 @@
                     <title>Happy Birthday ${name}!</title>
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
                     <style>
-                        body {
-                            background: linear-gradient(135deg, #8a2be2, #ff3399);
-                            min-height: 100vh;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            margin: 0;
-                            padding: 20px;
-                            overflow: hidden;
-                            font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
-                        }
-                        
-                        .container {
-                            background: rgba(255, 255, 255, 0.9);
-                            border-radius: 20px;
-                            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-                            padding: 40px;
-                            text-align: center;
-                            max-width: 600px;
-                            width: 90%;
-                            animation: zoomIn 0.8s ease;
-                            position: relative;
-                            z-index: 2;
-                        }
+                      body {
+    background: linear-gradient(135deg, #8a2be2, #ff3399);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh;   /* ✅ mobile-friendly instead of 100vh */
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;   /* ✅ allow vertical scroll but prevent sideways */
+}
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    animation: zoomIn 0.8s ease;
+    max-width: 600px;
+    width: 100%;
+}
+
                         
                         h1 {
                             color: #ff3399;
@@ -306,12 +304,14 @@
     }
 
     @keyframes drop {
-        0% {
-            transform: translateY(-100vh) scale(0.8) rotate(0deg);
-        }
-        100% {
-            transform: translateY(100vh) scale(1) rotate(360deg);
-        }
+    0% {
+        transform: translateY(-120dvh) scale(0.8) rotate(0deg);
+    }
+    100% {
+        transform: translateY(120dvh) scale(1) rotate(360deg);
+    }
+}
+
     }
                     </style>
                 </head>
@@ -380,6 +380,7 @@ I will always remember 03/09/2025 forever…❤
     </script>
 </body>
 </html>
+
 
 
 
